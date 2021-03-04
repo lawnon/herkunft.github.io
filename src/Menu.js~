@@ -1,0 +1,8 @@
+/* Copyright © 2021 Akobuije GmbH
+ * Autor: Bob-Anyeji Chukwunonso
+ * Date: 04.03.2021
+ * Discription: Custom Header Component with Language Selection Interface 
+ * Template: https://heimatkunde.boell.de/de/zwischenraum-fuer-kunst
+ */
+
+import React, {Component} from 'react'

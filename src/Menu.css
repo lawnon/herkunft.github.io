@@ -1,0 +1,238 @@
+/* Copyright © 2021 Akobuije GmbH
+ * Autor: Bob-Anyeji Chukwunonso
+ * Date: 04.03.2021
+ * Discription: Custom Menu Stylesheet with Navigation Interface
+ * Document: Menu.css 
+ * Template: https://heimatkunde.boell.de/de/zwischenraum-fuer-kunst
+ */
+
+/* Definition of Menu Properties
+ *==============================
+ */
+
+/* Mega Menu Navigation Properties */
+.megaMenu {
+    padding-bottom: 8px;
+}
+
+.megaMenuExpanded {
+    background-color: #f1f1f1;
+    margin-bottom: 40px;
+}
+.megaMenu {
+    padding: 0 10px 10px;
+        padding-bottom: 10px;
+    color: #667;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+/* Mega Menu Controls */
+.megaMenuControls {
+    border-top: 1px solid #e2e2e2;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    white-space: nowrap;
+    width: 100%;
+}
+.megaMenuExpanded .megaMenuControls {
+    border-top: 0;
+}
+/* Pseudo-Elements */
+.megaMenuExpanded .megaMenuControls::after {
+    display: none;
+}
+.megaMenuControls::after {
+    display: none;
+}
+.megaMenuControls::after {
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), white);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 100%;
+    margin-right: -10px;
+    position: absolute;
+    pointer-events: none;
+    right: 0;
+    width: 40px;
+}
+
+/* Mega Menu Button hamburger Elastic */
+html[dir="ltr"] .megaMenu .hamburger {
+    padding-left: 0;
+}
+.megaMenuControls > * {
+    display: inline-block;
+}
+.hamburger {
+    outline: none;
+}
+.hamburger {
+    padding: 15px 15px;
+        padding-left: 15px;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-transition-property: opacity, -webkit-filter;
+    transition-property: opacity, -webkit-filter;
+    transition-property: opacity, filter;
+    transition-property: opacity, filter, -webkit-filter;
+    -webkit-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+}
+html, body, button, input, select, textarea {
+    color: #444;
+    font-family: "dinweb", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.3;
+    text-decoration: none;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+button, select {
+    text-transform: none;
+}
+button {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+/* Pseudo Elements */
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* Hamburger Box */
+html[dir="ltr"] .hamburgerBox {
+    margin-right: 14px;
+}
+.hamburgerBox {
+    width: 25px;
+    height: 17px;
+    display: inline-block;
+    position: relative;
+}
+
+/* Hambuger Inner */
+.hamburgerInner, .hamburgerInner::before, .hamburgerInner::after {
+    width: 25px;
+    height: 3px;
+    background-color: #667;
+    border-radius: 4px;
+    position: absolute;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-timing-function: ease;
+    transition-timing-function: ease;
+}
+.hamburgerInner {
+    display: block;
+    top: 50%;
+    margin-top: -1.5px;
+}
+/* Pseude Elements */
+.hamburgerInner::after {
+    bottom: -7px;
+}
+.hamburgerInner::before, .hamburgerInner::after {
+    content: "";
+    display: block;
+}
+.hamburgerInner::before {
+    top: -7px;
+}
+
+/* Hamburger Label */
+.hamburgerLabel {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+/* Hamburger Title */
+.hamburgerTitle.hamburgerTitleVisible {
+    display: inline;
+}
+.hamburgerTitle {
+    font-size: 22px;
+    display: none;
+}
+
+/* Hamburger Close */
+.hamburgerClose {
+    display: none;
+    vertical-align: top;
+}
+
+/* Mega Menu Row */
+.megaMenuRow {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.megaMenuRow {
+    font-size: 15px;
+}
+.megaMenuRow2 {
+    border-top: 1px solid #999;
+    padding: 32px 0 24px;
+}
+.megaMenuRow > .div:last-child {
+    margin-right: 0;
+}
+.megaMenuRow > .div {
+    min-width: 164px;
+}
+.megaMenuRow > .div {
+    margin: 0 20px 0 0;
+        margin-right: 20px;
+    line-height: 1.4;
+}
+.megaMenuRow .div {
+    position: relative;
+}
+
+/* Mega Menu Row Hyper Link */
+.megaMenuRow a {
+    color: #444;
+    display: block;
+    margin-bottom: 8px;
+}
+.megaMenu a {
+    text-decoration: none;
+}

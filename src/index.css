@@ -1,8 +1,14 @@
-/* Autor: Bob-Anyeji Chukwunonso
- * Discriptio: This Document Contains Definitions for WebPage Stylesation Properties
+/* Copyright © 2021 Akobuije GmbH
+ * Autor: Bob-Anyeji Chukwunonso
+ * Date: 04.03.2021
+ * Discription: Stylesheet Containing Default Properties for WepPage 
+ * Document: index.css 
+ * Template: https://heimatkunde.boell.de/de/zwischenraum-fuer-kunst
  */
 
-/* Definition of base html Properties */
+/* Definition of Base html Properties 
+ * ==================================
+ */
 html {
     box-sizing: border-box;
 }
@@ -82,208 +88,9 @@ body {
     margin-right: auto;
 }
 
-/* Definition of Pre Header Hidden Properties */
-.hidden {
-    display: none;
-}
-.hidden {
-    display: none;
-}
-
-/* Definition of Page Header Properties */
-.PageHeader {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 980px;
-}
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-    display: block;
-}
-
-/* Definition of Section Branding */
-.divBranding {
-    padding-left: 10px;
-    padding-right: 10px;
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 20px;
-}
-
-/* Definition of Section Branding .Block Properties */
-.divBranding .block {
-    display: block;
-    width: 100%;
-    max-width: 380px;
-}
-
-/* Definition of Section Branding .block .flied Properties */
-.divBranding .field {
-    width: 100%;
-}
-
-/* Definition of Hyperlink Properties */
-a {
-    color: #444;
-}
-a {
-    background-color: transparent;
-}
-.PageHeader a {
-    color: #7c7c7c;
-}
-
-/* Definition of img Properties */ 
-img {
-    vertical-align: middle;
-}
-img {
-    max-width: 100%;
-    height: auto;
-}
-img {
-    border: 0;
-}
-
-/* Definition of Header Items */
-html[dir="ltr"] .divHeaderItems {
-    padding-right: 120px;
-}
-html[dir="ltr"] .divHeaderItems {
-    padding-right: 100px;
-}
-.divHeaderItems {
-    margin-top: 20px;
-    padding-top: 30px;
-    padding-bottom: 20px;
-}
-.divHeaderItems {
-    -webkit-flex-shrink: 0;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
-    padding: 5px 0 10px;
-        padding-top: 5px;
-        padding-right: 0px;
-        padding-bottom: 10px;
-    position: relative;
-}
-.divHeaderItems {
-    position: relative;
-}
-
-/* Difinition of Header Items, Language Selection Property */
-html[dir="ltr"] #blockLanguageSelection {
-    right: 30px;
-}
-#blockLanguageSelection {
-    display: inline-block;
-}
-#blockLanguageSelection {
-    position: absolute;
-    top: 30px;
-    width: 38px;
-}
-html[dir="ltr"] .divHeaderItems .block:not(:last-child) {
-    margin-right: 24px;
-}
-
-/* Definition of Drop Button Wrapper Properties */
-.js .dropButtonWrapper, .js .dropButtonWidget {
-    position: relative;
-    display: block;
-}
-.dropButtonWrapper, .dropButtonWrapper div {
-    box-sizing: border-box;
-}
-
-/* Definition of Drop Button Widget */
-html[dir="ltr"] #blockLanguageSelection .dropButtonWidget {
-    padding-right: 0;
-}
-
-/* Definition of Drop Button Language Item */
-.js .dropButtonWidget .dropButton {
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    list-style-image: none;
-}
-p, ul, ol {
-    color: #444;
-    font-family: "dinweb", Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 1.3;
-    text-decoration: none;
-}
-
-/* Definition of de Drop Buttion Action */
-#blockLanguageSelection ul.dropdownLanguageItem > li:first-child {
-    display: block;
-    cursor: pointer;
-    padding-top: 0;
-}
-#blockLanguageSelection ul.dropdownLanguageItem > li {
-    display: none;
-    padding-top: 4px;
-}
-.js .dropButton li, .js .dropButton a {
-    display: block;
-    outline: none;
-}
-
-/* Definition of language Link */
-html[dir="ltr"] #blockLanguageSelection ul.dropdownLanguageItem .languageLink {
-    padding-right: 20px;
-}
-#blockLanguageSelection ul.dropdownLanguageItem .languageLink {
-    position: relative;
-    z-index: 9;
-    width: 100%;
-}
-#blockLanguageSelection a.activeLanguage, #blockLanguageSelection .languageLink.activeLanguage {
-    text-decoration: none;
-}
-#blockLanguageSelection a, #blockLanguageSelection .languageLink {
-    border: 0;
-    display: inline-block;
-    font-weight: 400;
-    color: #667;
-    text-decoration: underline;
-    text-transform: uppercase;
-}
-
-/* Definition of :: After Properties */
-html[dir="ltr"] #blockLanguageSelection ul.dropdownLanguageItem > li:first-child::after {
-    right: 0;
-}
-#blockLanguageSelection ul.dropdownLanguageItem > li:first-child::after {
-    position: absolute;
-    top: -1px;
-    content: "▾";
-    display: inline-block;
-    padding-bottom: 16px;
-    text-align: center;
-    -webkit-transform-origin: 50% 55%;
-    -ms-transform-origin: 50% 55%;
-    transform-origin: 50% 55%;
-    -webkit-transition: -webkit-transform .5s;
-    transition: -webkit-transform .5s;
-    transition: transform .5s;
-    transition: transform .5s, -webkit-transform .5s;
-    width: 20px;
-    height: 18px;
-}
-
-/* Definition of Inherited Properties */
+/* Definition of Inherited Properties
+ *===================================
+ */
 *, ::before, ::after {
     box-sizing: inherit;
 }
