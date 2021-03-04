@@ -1,0 +1,9 @@
+import React, {Component} from 'react'
+
+const Head = () => {
+    return(
+	<div>
+	    <h1>Slam Base Steinfurt Herkunft</h1>
+	</div>
+    );
+}
