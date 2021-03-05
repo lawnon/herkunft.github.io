@@ -7,14 +7,14 @@ class App extends Component{
 
     render(){
 	return(
-	    <div class="Application">
-		<div class="PageTabs" />
-		<div class="PageContainer" style={{paddingTop: "0px"}}> 
+	    <div className="Application">
+		<div className="PageTabs" />
+		<div className="PageContainer" style={{paddingTop: "0px"}}> 
 		    <Header />
 		    <Menu />
-		    <div class="afarMark"></div>
+		    <div className="afarMark"></div>
 		    {/* Main Body */}
-		    <div class="afarMark"></div>
+		    <div className="afarMark"></div>
 		    {/* Footer */}
 		</div>
 	    </div>

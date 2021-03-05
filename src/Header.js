@@ -8,61 +8,94 @@
 
 import React, {Component} from 'react'
 
-// Initialisation of html Pre-Header Components
-const PreHeader = () => {
-    return(
-	<div class="divPreHeader">
-	</div>
-    )
-}
 
-// Initialisation of Html Main Header Components
-const MainHeader = () => {
-    return(
-	<header class="PageHeader" role="banner">
-	    {/* Definition of Header Logo and Hyper Link */}
-	    <div class="divBranding">
-		<div id="blockLogo" class="block Logo">
-		    <div class="field">
-			<a href="https://www.slambase.de/" target="_blank">
-			    <img src="Slam-Base-Logo_RGB-310w.webp" />
-			</a>			   
-		    </div>
-		</div>		 
-	    </div>
+// Class Object Initialisation
+class Header extends Component{
+
+    // State Initialisation
+    state = {btnDrop: null };
+    
+    render(){
+	
+	// Initialisation of Language Interface Click event
+	const onClickDropButton = () => {
 	    
-	    {/* Difinition of Header Menu Items */}
-	    <div class="divHeaderItems">
-		<div id="blockLanguageSelection" class="block LanguageSelection">
-		    <div class="dropButtonWrapper">
-			<div class="dropButtonWidget">
-			    <ul class="dropdownLanguageItem dropButton">
-				<li class="de dropbuttonAction">
-				    <span class="languageLink activeLanguage" hreflang="de">
-					DE
-				    </span>
-				</li>
-			    </ul>
-			</div>
-		    </div>
+	    // Assingment of State Variable
+	    this.btnDrop = document.getElementById('btnDropdown');
+	    
+	    // Conditional Open Close Statement 	    
+	    if(this.btnDrop.classList.contains('open')){
+	   	this.btnDrop.classList.remove('open');
+	   	this.btnDrop.classList.add('close');
+	   	return console.log('Dropdown Button Closed');
+	    }
+	    if(this.btnDrop.classList.contains('close')){
+	   	this.btnDrop.classList.remove('close');
+	   	this.btnDrop.classList.add('open');
+	 	return console.log('Dropdown Button Opened');
+	    }
+	    
+	    // Return if Undefined
+	    return console.log('Class open and close not found');
+	}
+	
+	// Initialisation of html Pre-Header Components
+	const PreHeader = () => {
+	    return(
+		<div className="divPreHeader">
 		</div>
+	    )
+	}
 
-		{/* Todo: Implementation of Search Component */}
+	// Initialisation of Html Main Header Components
+	const MainHeader = () => {
+	    return(
+		<header className="PageHeader" role="banner">
+		    {/* Definition of Header Logo and Hyper Link */}
+		    <div className="divBranding">
+			<div id="blockLogo" className="block Logo">
+			    <div className="field">
+				<a href="https://www.slambase.de/" target="_blank">
+				    <img src="Slam-Base-Logo_RGB-310w.webp" />
+				</a>			   
+			    </div>
+			</div>		 
+		    </div>
+		    
+		    {/* Difinition of Header Menu Items */}
+		    <div className="divHeaderItems">
+			<div id="blockLanguageSelection" className="block LanguageSelection">
+			    <div id="btnDropdown"
+				 className="dropButtonWrapper close"
+				 onClick={()=>onClickDropButton()}>
+				<div className="dropButtonWidget">
+				    <ul className="dropdownLanguageItem dropButton">
+					<li className="de dropbuttonAction">
+					    <span className="languageLink activeLanguage" hrefLang="de">
+						DE
+					    </span>
+					</li>
+				    </ul>
+				</div>
+			    </div>
+			</div>
+
+			{/* Todo: Implementation of Search Component */}
+		    </div>
+
+		    {/* Todo: Implementation of Silde In Menu if necessary */} 
+		</header>
+	    );
+	}
+
+	
+	// Initialisation of Total, Export Header Components
+	return(
+	    <div className="Header">
+		<PreHeader />
+		<MainHeader />
 	    </div>
-
-	    {/* Todo: Implementation of Silde In Menu if necessary */} 
-	</header>
-    );
+	)
+    }
 }
-
-// Initialisation of Total, Export Header Components 
-const Header = () => {
-    return(
-	<div class="Header">
-	    <PreHeader />
-	    <MainHeader />
-	</div>
-    )
-}
-
 export default Header;

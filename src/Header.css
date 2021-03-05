@@ -6,10 +6,16 @@
  * Template: https://heimatkunde.boell.de/de/zwischenraum-fuer-kunst
  */
 
-/* Definition of Header Properties 
- * ================================== */
+/*
+ ***********************************
+ * Definition of Header Properties *
+ * ================================* 
+ ***********************************
+ */
 
-/* Definition of Pre Header Hidden Properties */
+/* Definition of Pre Header Hidden Properties
+ * ===========================================
+ */
 .hidden {
     display: none;
 }
@@ -17,7 +23,9 @@
     display: none;
 }
 
-/* Definition of Page Header Properties */
+/* Definition of Page Header Properties 
+ * ====================================
+ */
 .PageHeader {
     display: -webkit-box;
     display: -webkit-flex;
@@ -35,7 +43,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     display: block;
 }
 
-/* Definition of Section Branding */
+/* Definition of Section Branding
+ * ====================================
+ */
 .divBranding {
     padding-left: 10px;
     padding-right: 10px;
@@ -44,19 +54,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     padding-bottom: 20px;
 }
 
-/* Definition of Section Branding .Block Properties */
+/* Definition of Section Branding .Block Properties
+ * =================================================
+ */
 .divBranding .block {
     display: block;
     width: 100%;
     max-width: 380px;
 }
 
-/* Definition of Section Branding .block .flied Properties */
+/* Definition of Section Branding .block .flied Properties
+ * =======================================================
+ */
 .divBranding .field {
     width: 100%;
 }
 
-/* Definition of Hyperlink Properties */
+/* Definition of Hyperlink Properties  
+ * ===================================
+ */ 
 a {
     color: #444;
 }
@@ -67,7 +83,9 @@ a {
     color: #7c7c7c;
 }
 
-/* Definition of img Properties */ 
+/* Definition of img Properties  
+ * ============================
+ */ 
 img {
     vertical-align: middle;
 }
@@ -79,7 +97,9 @@ img {
     border: 0;
 }
 
-/* Definition of Header Items */
+/* Definition of Header Items  
+ * ==================================
+ */ 
 html[dir="ltr"] .divHeaderItems {
     padding-right: 120px;
 }
@@ -105,7 +125,9 @@ html[dir="ltr"] .divHeaderItems {
     position: relative;
 }
 
-/* Difinition of Header Items, Language Selection Property */
+/* Difinition of Header Items, Language Selection 
+ * ===============================================
+ */ 
 html[dir="ltr"] #blockLanguageSelection {
     right: 30px;
 }
@@ -121,7 +143,9 @@ html[dir="ltr"] .divHeaderItems .block:not(:last-child) {
     margin-right: 24px;
 }
 
-/* Definition of Drop Button Wrapper Properties */
+/* Definition of Drop Button Wrapper Properties   
+ * =============================================
+ */ 
 .js .dropButtonWrapper, .js .dropButtonWidget {
     position: relative;
     display: block;
@@ -129,13 +153,23 @@ html[dir="ltr"] .divHeaderItems .block:not(:last-child) {
 .dropButtonWrapper, .dropButtonWrapper div {
     box-sizing: border-box;
 }
+/* Pseudo-Elemete */
+#blockLanguageSelection .dropButtonWrapper.open li:first-child::after {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
 
-/* Definition of Drop Button Widget */
+/* Definition of Drop Button Widget  
+ * ==================================
+ */ 
 html[dir="ltr"] #blockLanguageSelection .dropButtonWidget {
     padding-right: 0;
 }
 
-/* Definition of Drop Button Language Item */
+/* Definition of Drop Button Language Item  
+ * ========================================
+ */ 
 .js .dropButtonWidget .dropButton {
     overflow: hidden;
     margin: 0;
@@ -152,7 +186,9 @@ p, ul, ol {
     text-decoration: none;
 }
 
-/* Definition of de Drop Buttion Action */
+/* Definition of de Drop Buttion Action  
+ * =====================================
+ */ 
 #blockLanguageSelection ul.dropdownLanguageItem > li:first-child {
     display: block;
     cursor: pointer;
@@ -162,12 +198,21 @@ p, ul, ol {
     display: none;
     padding-top: 4px;
 }
+#blockLanguageSelection .dropButtonWrapper.open li {
+    display: block;
+    background-color: white;
+}
+.js .dropButton li:hover, .js .dropButton li:focus, .js .dropButton a:hover, .js .dropButton a:focus {
+    outline: initial;;
+}
 .js .dropButton li, .js .dropButton a {
     display: block;
     outline: none;
 }
 
-/* Definition of language Link */
+/* Definition of language Link  
+ * ============================
+ */
 html[dir="ltr"] #blockLanguageSelection ul.dropdownLanguageItem .languageLink {
     padding-right: 20px;
 }
@@ -187,10 +232,20 @@ html[dir="ltr"] #blockLanguageSelection ul.dropdownLanguageItem .languageLink {
     text-decoration: underline;
     text-transform: uppercase;
 }
+#blockLanguageSelection a:hover, #blockLanguageSelection .languageLink:hover {
+    color: #999;
+}
 
-/* Definition of :: After Properties */
+/* Definition of :: After Properties
+ * ==================================
+ */
 html[dir="ltr"] #blockLanguageSelection ul.dropdownLanguageItem > li:first-child::after {
     right: 0;
+}
+#blockLanguageSelection .dropButtonWrapper.open li:first-child::after {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 #blockLanguageSelection ul.dropdownLanguageItem > li:first-child::after {
     position: absolute;

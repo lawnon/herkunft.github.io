@@ -11,33 +11,33 @@ import React, {Component} from 'react'
 // Export Component
 const Menu = () => {
     return(
-	<div class="Menu">
-	    <nav class="megaMenu" role="navigation">
+	<div className="Menu">
+	    <nav className="megaMenu" role="navigation">
 
 		{/* Mega Menu Controls */}
-		<div class="megaMenuControls">
-		    <button class="megaMenuButton hamburger hamburgeElastic"
+		<div className="megaMenuControls">
+		    <button className="megaMenuButton hamburger hamburgeElastic"
 			    type="button"
 			    aria-label="Menu"
 			    aria-expanded="false"
 			    aria-controls="primary-menu">
-			<span class="hamburgerBox">
-			    <span class="hamburgerInner"></span>
-			    <span class="hamburgerLabel"></span>
+			<span className="hamburgerBox">
+			    <span className="hamburgerInner"></span>
+			    <span className="hamburgerLabel"></span>
 			</span>
-			<span class="hamburgerTitle hamburgerTitleVisible">Menu</span>
-			<span class="hamburgerClose">Schließen</span>
+			<span className="hamburgerTitle hamburgerTitleVisible">Menu</span>
+			<span className="hamburgerClose">Schließen</span>
 		    </button>
 		</div>
 
 		{/* Primary Menu Component */}
-		<div id="primaryMenu" class="megaMenuRows">
-		    <div class="megaMenuRow megaMenuRow1">
+		<div id="primaryMenu" className="megaMenuRows">
+		    <div className="megaMenuRow megaMenuRow1">
 		    </div>
-		    <div class="megaMenuRow megaMenuRow2">
-			<div class="div MegaMenuRow2-Slot1">
-			    <div id="blockMenuLogo" class="block blockContent">
-				<div class="textFormatted field fieldNameBody">
+		    <div className="megaMenuRow megaMenuRow2">
+			<div className="div MegaMenuRow2-Slot1">
+			    <div id="blockMenuLogo" className="block blockContent">
+				<div className="textFormatted field fieldNameBody">
 				    <div>
 					Kulturelle Bruecken bauen
 					<br />
@@ -55,9 +55,9 @@ const Menu = () => {
 			    </div>
 			</div>
 		    </div>
-		    <div class="megaMenuRow megaMenuRow3">
+		    <div className="megaMenuRow megaMenuRow3">
 		    </div>
-		    <div class="megaMenuRow megaMenuRow4">
+		    <div className="megaMenuRow megaMenuRow4">
 		    </div>
 		</div>
 		
