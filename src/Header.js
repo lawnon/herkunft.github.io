@@ -46,7 +46,7 @@ class Header extends Component{
 		</div>
 	    )
 	}
-
+	
 	// Initialisation of Html Main Header Components
 	const MainHeader = () => {
 	    return(
