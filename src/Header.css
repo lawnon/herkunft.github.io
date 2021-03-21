@@ -39,9 +39,6 @@
     margin-right: auto;
     max-width: 980px;
 }
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-    display: block;
-}
 
 /* Definition of Section Branding
  * ====================================

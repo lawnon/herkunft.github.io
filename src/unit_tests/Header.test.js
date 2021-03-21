@@ -33,7 +33,7 @@ function evaluate(val){
     }
 }
 
-it("Unit Test, test run", () => {
+it('Unit Test: Header.js', () => {
     // Mount Component ot Unit Test Container
     act(() => {
 	render(<Header />,container);

@@ -50,12 +50,15 @@ class Header extends Component{
 	// Initialisation of Html Main Header Components
 	const MainHeader = () => {
 	    return(
-		<header className="PageHeader" role="banner">
+		<header className="PageHeader"
+			role="banner">
 		    {/* Definition of Header Logo and Hyper Link */}
 		    <div className="divBranding">
-			<div id="blockLogo" className="block Logo">
+			<div id="blockLogo"
+			     className="block Logo">
 			    <div className="field">
-				<a href="https://www.slambase.de/" target="_blank">
+				<a href="https://www.slambase.de/"
+				   target="_blank">
 				    <img src="Slam-Base-Logo_RGB-310w.webp" />
 				</a>			   
 			    </div>
@@ -64,14 +67,16 @@ class Header extends Component{
 		    
 		    {/* Difinition of Header Menu Items */}
 		    <div className="divHeaderItems">
-			<div id="blockLanguageSelection" className="block LanguageSelection">
+			<div id="blockLanguageSelection"
+			     className="block LanguageSelection">
 			    <div id="btnDropdown"
 				 className="dropButtonWrapper close"
 				 onClick={()=>onClickDropButton()}>
 				<div className="dropButtonWidget">
 				    <ul className="dropdownLanguageItem dropButton">
 					<li className="de dropbuttonAction">
-					    <span className="languageLink activeLanguage" hrefLang="de">
+					    <span className="languageLink activeLanguage"
+						  hrefLang="de">
 						DE
 					    </span>
 					</li>

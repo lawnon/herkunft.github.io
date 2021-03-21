@@ -6,19 +6,122 @@
  * Template: https://heimatkunde.boell.de/de/zwischenraum-fuer-kunst
  */
 
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import Data from './Menu.json';
 
 // Export Component
 class Menu extends Component{
 
-    // State Initialisation
-    state = {
-	navMegaMenu: null,
-	btnExpand: null,
-	spanTitle: null,
+    constructor(props){
+	super(props);
+	// State Initialisation
+	this.state = {
+	    navMegaMenu: null,
+	    btnExpand: null,
+	    spanTitle: null,
+	};
     }
     
-    render(){
+    componentDidMount() {
+	
+	// Get Mega Menu Row 1 Component
+	const Row1 = document.getElementById('divMegaMenuRow1');	
+
+	if(Row1 != null){	    
+	    Data.members.forEach((Slot, index) => {
+
+		console.log(index);
+		console.log(Slot);		
+		   
+		// Initialize Menu Slot
+		var divSlot = document.createElement('div');
+		var divMegaMenuSlot = "divMegaMenu divSlot " + index;
+		divSlot.setAttribute('class', divMegaMenuSlot);
+
+		// Initialize Navigation Block
+		var Nav = document.createElement('nav');
+		var blockMegaMenuNavSlot = "blockMegaMenuNavSlot " + index;
+		var blockMegaMenuSlot = "blockMegaMenuSlot " + index;
+		Nav.setAttribute('id', blockMegaMenuNavSlot);
+		Nav.setAttribute('class', 'block blockMenu navigation menuMain');
+		Nav.setAttribute('role', 'navigation');
+		Nav.setAttribute('aria-labelledby', blockMegaMenuSlot);
+
+		var divVh = document.createElement('div');
+		divVh.setAttribute('id' , blockMegaMenuSlot);
+		divVh.setAttribute('class', 'visually-hidden');
+		divVh.textContent = 'Megamenu ' + 'Row 1' + ' Slot ' + index.toString(); 
+		
+		// Initialize ul Element
+		var Ul = document.createElement('ul');
+		Ul.setAttribute('class', 'megaMenu megaMenu_menu Toplevel');
+
+		// Initialize li Element
+		var Li = document.createElement('li');
+		Li.setAttribute('class', 'menuItem menuItem--Expanded menuItemHasChildren');
+
+		// Initialize a Element
+		var A = document.createElement('a');
+		var class_a_name = Slot.color + ' menuLink menuLinkHasChildren';
+		A.setAttribute('class', class_a_name);
+		A.setAttribute('href', Slot.link);
+		A.textContent = Slot.content;
+
+		// Initialize Span Toggle Element
+		var SpanToggler = document.createElement('span');
+		SpanToggler.setAttribute('class', 'megaMenuToggler');
+		SpanToggler.setAttribute('role', 'button');
+		SpanToggler.setAttribute('aria-expanded', 'false');
+
+		// Initializer Span visually Hidden Element
+		var SpanVh = document.createElement('span');
+		SpanVh.setAttribute('class', 'visually-hidden');
+		SpanVh.textContent = 'Toggle submenu';
+
+		// Initialize Span Toggler Icon
+		var SpanIcon = document.createElement('span');
+		SpanIcon.setAttribute('class', 'megaMenuTogglerIcon');
+		SpanIcon.setAttribute('aria-hidden', 'true');
+
+		var UlToplevel = document.createElement('ul');
+		UlToplevel.setAttribute('class', 'megaMenu megaMenuToplevel');
+	   	
+		// Initialize Menu Slot
+		Row1.appendChild(divSlot);
+		divSlot.appendChild(Nav);
+		Nav.appendChild(divVh);
+		Nav.appendChild(Ul);
+		Ul.appendChild(Li);
+		Li.appendChild(A);
+		Li.appendChild(SpanToggler);
+		Li.appendChild(UlToplevel);
+		
+		// Initialize Span Children
+		SpanToggler.appendChild(SpanVh);
+		SpanToggler.appendChild(SpanIcon);
+		// Initialize Menu Slot Items
+		Slot.items.forEach((item)=>{
+		    var LiItem = document.createElement('li');
+		    LiItem.setAttribute('class', 'menuItem');
+
+		    var AItemLink = document.createElement('a');
+		    AItemLink.setAttribute('class', 'menuLink');
+		    AItemLink.setAttribute('href', item.link);
+		    AItemLink.textContent = item.titel;
+
+		    UlToplevel.appendChild(LiItem);
+		    LiItem.appendChild(AItemLink);
+		});
+	    })	    
+	}else{
+	    console.log("MM Row 1 not found");
+	}
+	
+	console.log("Component Did Mount Completed");
+    }
+    
+    render(){ 
+	
 	// Initialisation of Menu Button Click Event
 	const onClickExpand = () => {
 	    // Assign State Variables
@@ -29,15 +132,17 @@ class Menu extends Component{
 
 	    // Conditional Open and Close Statemnet for Expanding Mega Menu
 	    if(this.btnExpand.getAttribute('aria-expanded') === 'false'){
-		this.navMegaMenu.classList.add('megaMenuExpanded');
+		this.navMegaMenu.classList.add('megaMenu--Expanded');
 		this.btnExpand.setAttribute('aria-expanded', 'true');
 		this.spanTitle.classList.remove('hamburgerTitleVisible');
 	    }else{
-		this.navMegaMenu.classList.remove('megaMenuExpanded');
+		this.navMegaMenu.classList.remove('megaMenu--Expanded');
 		this.btnExpand.setAttribute('aria-expanded', 'false');
 		this.spanTitle.classList.add('hamburgerTitleVisible');
 	    }
 	}
+
+
 	// Initialisation of Mega Menu Controls
 	const MegaMenuControls = () => {
 	    return(
@@ -59,12 +164,13 @@ class Menu extends Component{
 		</div>
 	    );
 	}
-
+	
 	// Initialisation of Mega Menu Primary Components
 	const MegaMenuComponents = () => {
 	    return(
 		<div id="primaryMenu" className="megaMenuRows">
-		    <div className="megaMenuRow megaMenuRow1">
+		    <div id="divMegaMenuRow1" className="megaMenuRow megaMenuRow1">
+			
 		    </div>
 		    <div className="megaMenuRow megaMenuRow2">
 			<div className="div MegaMenuRow2-Slot1">
@@ -98,7 +204,9 @@ class Menu extends Component{
 	// Initialisation of MegaMenu Navigation 
 	const MegaMenu = () => {
 	    return(
-		<nav id="navMegaMenu" className="megaMenu" role="navigation">
+		<nav id="navMegaMenu"
+		     className="megaMenu"
+		     role="navigation">
 		    {/* Mega Menu Controls */}
 		    <MegaMenuControls />
 		    {/* Primary Menu Component */}
@@ -111,9 +219,10 @@ class Menu extends Component{
 	return(
 	    <div className="Menu">
 		<MegaMenu />
+		
 	    </div>
-	)
+	);
     }
 }
 
-    export default Menu;
+export default Menu;

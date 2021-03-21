@@ -1,4 +1,4 @@
-/* Copyright © 2021 Akobuije GmbH
+xo/* Copyright © 2021 Akobuije GmbH
  * Autor: Bob-Anyeji Chukwunonso
  * Date: 04.03.2021
  * Discription: Custom Menu Stylesheet with Navigation Interface
@@ -11,21 +11,13 @@
  */
 
 /* Mega Menu Navigation Properties */
-.megaMenu {
-    padding-bottom: 8px;
-}
-
-.megaMenuExpanded {
+.megaMenu--Expanded {
     background-color: #f1f1f1;
     margin-bottom: 40px;
 }
 .megaMenu {
     padding: 0 10px 10px;
-        padding-bottom: 10px;
     color: #667;
-}
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-    display: block;
 }
 
 /* Mega Menu Controls */
@@ -37,11 +29,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     white-space: nowrap;
     width: 100%;
 }
-.megaMenuExpanded .megaMenuControls {
+.megaMenuControls {
+    max-width: 980px;
+}
+.megaMenu--Expanded .megaMenuControls {
     border-top: 0;
 }
 /* Pseudo-Elements */
-.megaMenuExpanded .megaMenuControls::after {
+.megaMenu--Expanded .megaMenuControls::after {
     display: none;
 }
 .megaMenuControls::after {
@@ -153,6 +148,21 @@ html[dir="ltr"] .hamburgerBox {
     top: 50%;
     margin-top: -1.5px;
 }
+.hamburgerSqueeze.is-active .hamburgerInner, .hamburger[aria-expanded="true"] .hamburgerInner {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition-delay: 0.12s;
+    transition-delay: 0.12s;
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburgerSqueeze .hamburgerInner, .hamburger[aria-expanded="true"] .hamburgerInner {
+    -webkit-transition-duration: 0.075s;
+    transition-duration: 0.075s;
+    -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
 /* Pseude Elements */
 .hamburgerInner::after {
     bottom: -7px;
@@ -163,6 +173,32 @@ html[dir="ltr"] .hamburgerBox {
 }
 .hamburgerInner::before {
     top: -7px;
+}
+.hamburgerSqueeze.is-active .hamburgerInner::after, .hamburger[aria-expanded="true"] .hamburgerInner::after {
+    bottom: 0;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transition: bottom 0.075s ease, -webkit-transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: bottom 0.075s ease, -webkit-transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburgerSqueeze .hamburgerInner::after, .hamburger[aria-expanded="true"] .hamburgerInner::after {
+    -webkit-transition: bottom 0.075s 0.12s ease, -webkit-transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: bottom 0.075s 0.12s ease, -webkit-transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburgerSqueeze.is-active .hamburgerInner::before, .hamburger[aria-expanded="true"] .hamburgerInner::before {
+    top: 0;
+    opacity: 0;
+    -webkit-transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+    transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+}
+.hamburgerSqueeze .hamburgerInner::before, .hamburger[aria-expanded="true"] .hamburgerInner::before {
+    -webkit-transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+    transition: top 0.075s 0.12s ease, opacity 0.075s ease;
 }
 
 /* Hamburger Label */
@@ -188,12 +224,28 @@ html[dir="ltr"] .hamburgerBox {
 }
 
 /* Hamburger Close */
+.megaMenu--Expanded .hamburgerClose {
+    display: inline;
+}
 .hamburgerClose {
     display: none;
     vertical-align: top;
 }
 
 /* Mega Menu Row */
+.js .megaMenuRows {
+    display: none;
+}
+.megaMenuRows {
+    max-width: 980px;
+}
+.megaMenu--Expanded > .megaMenuRows {
+    display: block;
+}
+.megaMenuRows {
+    display: block;
+    margin: 16px auto 0 auto;
+}
 .megaMenuRow {
     display: -webkit-box;
     display: -webkit-flex;
@@ -208,31 +260,107 @@ html[dir="ltr"] .hamburgerBox {
 .megaMenuRow {
     font-size: 15px;
 }
+.megaMenuRow1 {
+    margin-bottom: 26px;
+}
 .megaMenuRow2 {
     border-top: 1px solid #999;
     padding: 32px 0 24px;
 }
-.megaMenuRow > .div:last-child {
+.megaMenuRow > .divSlot:last-child {
     margin-right: 0;
 }
-.megaMenuRow > .div {
-    min-width: 164px;
-}
-.megaMenuRow > .div {
+.megaMenuRow > .divSlot {
     margin: 0 20px 0 0;
-        margin-right: 20px;
+    margin-right: 20px;
     line-height: 1.4;
 }
-.megaMenuRow .div {
+.megaMenuRow .divSlot {
     position: relative;
 }
 
+/* Mega Menu Top level Item */
+.megaMenu_menu {
+    padding-left: 0;
+}
+p, ul, ol {
+    color: #444;
+    font-family: "dinweb", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.3;
+    text-decoration: none;
+}
+
+/* Mega Menu Item */
+.megaMenu_menu .menuItem {
+    padding-top: 0;
+}
+.megaMenu_menu li {
+    list-style: none;
+    margin: 0;
+}
+
 /* Mega Menu Row Hyper Link */
+.megaMenu_menu .menuLinkHasChildren, .megaMenu .blockMenu:not([class*="menu--service-links"]) > ul > li > .menuLink {
+    line-height: 1.0;
+    min-height: 2.0em;
+}
+.megaMenu_menu .menuLinkHasChildren, .megaMenu .blockMenu:not([class*="menu--service-links"]) > ul > li > .menuLink {
+    color: inherit;
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 1.5;
+}
 .megaMenuRow a {
     color: #444;
     display: block;
     margin-bottom: 8px;
 }
-.megaMenu a {
+.megaMenu_menu a {
     text-decoration: none;
+}
+
+/* Mega Menu Span(Menu Toggeler */
+.megaMenuToggler {
+    display: block;
+    padding: 10px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    z-index: 10;
+}
+.megaMenuToggler {
+    display: none;
+}
+
+/* Mega Menu Toggler Icon */
+.megaMenuTogglerIcon {
+    display: block;
+    color: #999;
+    width: 20px;
+    height: 20px;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+/* Pseudo Element */
+.megaMenuToggler .megaMenuTogglerIcon::after {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e900";
+    font-size: 2em;
+}
+
+/* Mega Menu Item */
+.megaMenu .menuItem {
+    padding-top: 0;
 }

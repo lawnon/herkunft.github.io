@@ -4,5 +4,6 @@ import App from './App.js';
 import './index.css';
 import './Header.css';
 import './Menu.css';
+import './Main.css';
 
 ReactDOM.render(<App />, document.getElementById('root'))
