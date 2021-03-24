@@ -1,0 +1,357 @@
+/* Copyright © 2021 Akobuije GmbH
+ * Autor: Bob-Anyeji Chukwunonso
+ * Date: 20.03.2021
+ * Discription: Custom Body Component with the Main Content 
+ * Document: Main.js 
+ * Template: https://heimatkunde.boell.de/de/zwischenraum-fuer-kunst
+ */
+
+import React, {Component} from 'react';
+
+// Export Component
+class Main extends Component{
+
+    constructor(props){
+	super(props);
+
+	// State Initialisation
+	this.state = {
+	    
+	};
+    }
+    
+    render(){
+	const TfHeader = (props) => {
+	    return(
+		<header className='thematic-focus__header'>
+		    <div className='thematic-focus-box__title-and-intro'>
+			<div className='thematic-focus-box__intro'>
+			    {props.intro}
+			</div>
+			<h2 className='thematic-focus-box__title teaser__title'>
+			    {props.title}
+			</h2>
+		    </div>
+		    <div className='thematic-focus-box__description'>
+			<p>
+			    Kuratiert von<br/>  
+			    <strong>
+				<a href={props.curatorLink}>
+				    {props.curator}
+				</a>
+			    </strong>
+			</p>
+		    </div>
+		    {(props.articleLink != null && props.buttonText != null) &&
+		     <div className='thematic-focus-box__more-link-wrapper'>
+			 <a className='thematic-focus-box__more-link'
+			    href={props.articleLink}>
+			     {props.buttonText}
+			 </a>
+		     </div>}
+		</header>
+	    );
+	}
+
+	const TfNav = () => {
+	    return(
+		<nav className="thematic-focus-box__links">
+		    <a className="thematic-focus-box__link"
+		       href='https://www.slambase.de/impressum'>
+			<span className="thematic-focus-box__link-intro">
+			    Video-Lesungen
+			</span>
+			<span className="thematic-focus-box__link-label">
+			    #zuhauselesen
+			</span>
+		    </a>        
+		    <a className="thematic-focus-box__link"
+		       href="https://www.slambase.de/impressum">
+			<span className="thematic-focus-box__link-intro">
+			    Interviews &amp; Leseproben
+			</span>
+			<span className="thematic-focus-box__link-label">
+			    Bibliothek
+			</span>
+		    </a>        
+		    <a className="thematic-focus-box__link"
+		       href="https://www.slambase.de/impressum">
+			<span className="themat ic-focus-box__link-intro">
+			    Bildende Kunst
+			</span>
+			<span className="thematic-focus-box__link-label">
+			    Galerie
+			</span>
+		    </a>          
+		</nav>
+	    );
+	}
+	
+	const ThematicFocusMain = (props) => {
+	    return(
+		<article className='thematic-focus-box'
+			 style={{backgroundImage:props.img}}>
+		    <article className='thematic-focus-box__words'>
+			{/* Header Box */}
+			<TfHeader intro='Open Space for Robotics'
+				  title='This is A Test Title'
+				  curator='Akobuije'
+				  curatorLink ='https://www.slambase.de/impressum'
+				  articleLink='https://www.slambase.de/impressum'
+				  buttonText='About the Projekt'/>
+			{/* Navigation Box */}
+			<TfNav />			
+		    </article>
+		</article>
+	    );
+	}
+
+	
+	const ThematicFocusHeader = (props) => {
+	    return(
+		<article className='thematic-focus-box'
+			 style={{backgroundImage:props.img}}>
+		    <article className='thematic-focus-box__words'>
+			{/* Header Box */}
+			<TfHeader intro='Open Space for Robotics'
+				  title='This is A Test Title'
+				  curator='Akobuije'
+				  curatorLink ='https://www.slambase.de/impressum'
+				  articleLink='https://www.slambase.de/impressum' />			
+		    </article>
+		</article>
+	    );
+	}
+	
+	const GridThematicFocus = () => {
+	    return (
+		<div className='grid-container'>
+		    <div className='grid-container-content'>
+			<div className='grid-container-before'></div>
+			<div className='grid-slots-wrapper'>
+			    <div className='grid-slot-1d1 grid-slot-first'>
+				<div className='grid-boxes-wrapper'>
+				    <div className='grid-box'>
+					<ThematicFocusMain img='url("SoulKitchenOpenStage_Web_06-1920w.webp")' />
+					
+				    </div>
+				</div>
+			    </div>
+			</div>
+			<div className='grid-container-after'></div>
+		    </div>
+		</div>
+	    );
+	}
+	
+	const GridOneSlotWhole = () => {
+	    return (
+		<div className='grid-container'>
+		    <div className='grid-container-content'>
+			<div className='grid-container-before'></div>
+			<div className='grid-slots-wrapper'>
+			    <div className='grid-slot-1d1 grid-slot-first'>
+				<div className='grid-boxes-wrapper'>
+				    <div className='grid-box'>
+					<ThematicFocusHeader
+					    img='url("SoulKitchenOpenStage_Web_06-1920w.webp")' />
+				    </div>
+				</div>
+			    </div>
+			</div>
+			<div className='grid-container-after'></div>
+		    </div>
+		</div>
+	    );
+	}
+
+	const GridInnerBox = () => {
+	    return(
+		<div class="grid-box-inner">
+
+		    <article data-history-node-id="4287"
+			     role="article"
+			     about="/de/2021/02/02/wie-lange-muessen-wir-noch-im-mittelmeer-ertrinken"
+			     typeof="schema:Article"
+			     class="teaser--main teaser node node--type-article node--promoted node--view-mode-teaser-main">
+			<a href="/de/2021/02/02/wie-lange-muessen-wir-noch-im-mittelmeer-ertrinken"
+			   rel="bookmark">
+			    <div class="teaser__content-wrap">
+
+				<div class="teaser__image-wrap">
+				    <div class="teaser__image">
+					
+					<div class="field field--name-field-teaser-image field--type-entity-reference field--label-hidden field__item">
+					    
+					    <article data-view-mode="image_and_licence_3d2"
+						     data-show-licence-link="0"
+						     data-has-licence="1"
+						     data-licence-id="5625"
+						     data-licence-creator="Filimon Mebrhatom (privat)"
+						     data-licence-licence="shareable"
+						     data-licence-realname="All rights reserved."
+						     data-licence-url=""
+						     data-licence-image="https://heimatkunde.boell.de/sites/default/files/styles/var_tiny/public/2021-02/Filimon%20Mebrhatom%20%28c%29%20privat%20%285%29.jpg?itok=vDd1VO8i"
+						     class="media media--type-image media--view-mode-image-and-licence-3d2">
+						
+						
+						<div data-blazy=""
+						     class="blazy blazy--field blazy--field-media-image blazy--field-media-image--image-and-licence-3d2 field field--name-field-media-image field--type-image field--label-hidden field__item blazy--on blazy--first">
+
+
+
+
+						    <div class="media media--bundle--image media--blazy media--responsive media--image is-b-loaded">
+							
+							
+							<picture>
+							    <video style="display: none;" />
+							    <source media="all and (min-width: 760px)"
+								    type="image/jpeg"
+								    sizes="100vw"
+								    srcset="/sites/default/files/styles/3d2_medium/public/2021-02/Filimon%20Mebrhatom%20%28c%29%20privat%20%285%29.jpg?h=0775493e&amp;itok=Qii4QmfP 630w, /sites/default/files/styles/3d2_large/public/2021-02/Filimon%20Mebrhatom%20%28c%29%20privat%20%285%29.jpg?h=0775493e&amp;itok=H7dBUX57 980w"/>
+							    <source type="image/jpeg"
+								    sizes="100vw"
+								    srcset="/sites/default/files/styles/3d2_small/public/2021-02/Filimon%20Mebrhatom%20%28c%29%20privat%20%285%29.jpg?h=0775493e&amp;itok=9aZI8R_Q 221w, /sites/default/files/styles/3d2_medium/public/2021-02/Filimon%20Mebrhatom%20%28c%29%20privat%20%285%29.jpg?h=0775493e&amp;itok=Qii4QmfP 630w" />
+							    
+							    <img class="media__image media__element b-lazy b-responsive b-loaded"
+								 loading="lazy"
+								 src="/sites/default/files/styles/3d2_small/public/2021-02/Filimon%20Mebrhatom%20%28c%29%20privat%20%285%29.jpg?h=0775493e&amp;itok=9aZI8R_Q"
+								 alt="Portrait von Filimon Mebrhatom"
+								 title="Filimon Mebrhatom"
+								 typeof="foaf:Image" />
+
+							    
+							</picture>
+							
+							
+						    </div>
+
+						</div>
+						
+						
+					    </article>
+
+					</div>
+
+
+				    </div>
+				</div>
+				
+				<div class="teaser__flexwrap">
+				    
+				    
+				    <h3 class="teaser__title">
+					
+					<span property="schema:name"
+					      class="field field--name-title field--type-string field--label-hidden">
+					    „Wie lange müssen wir noch im Mittelmeer ertrinken?“
+					</span>
+
+
+
+				    </h3>
+				    <span property="schema:name"
+					  content="„Wie lange müssen wir noch im Mittelmeer ertrinken?“"
+					  class="rdf-meta hidden">
+				    </span>
+
+				    <span property="schema:interactionCount"
+					  content="UserComments:0"
+					  class="rdf-meta hidden">
+				    </span>
+
+				    
+				    
+
+				    <div class="teaser__body">
+				    
+					<div class="field field--name-field-content-genre field--type-string field--label-hidden field__item">
+					    Interview
+					</div>
+				    
+
+					<div class="teaser__text">
+
+					    <div class="content-authors field--name-field-authors">
+						<span class="content-authors__byline">
+						    Von
+						</span>
+
+					    
+					    </div>
+					</div>
+				    
+				    
+				    </div>
+				
+				</div>
+			    </a>
+			</article>
+		    </div>
+		    );
+		    }
+	
+	const GridTwoSlotHalf = () => {
+	    return (
+		null
+	    );
+	}
+
+	const GridTwoSlotQuater = () => {
+	    return (
+		null
+	    );
+	}
+
+	const GridThreeSlotEqual = () => {
+	    return (
+		null
+	    );
+	};
+	
+	const Copyright = () => {
+	    return(
+		<div class='print-copyright-container'>
+		    <p class='print-copyright-text'>
+			<b>© Slam Base</b><br/>
+			Waldstraße 30B<br/>
+			26903 Surwold, Germany<br/>
+			+49 (0) 1521-1840284<br/>
+			<i>www.slambase.de</i><br/>
+			<i>info@slambase.de</i>
+		    </p>
+		</div>
+	    );
+	}
+
+	return(	    
+	    <div className='Main'>
+		{/* Dominant Body of Content */}
+		<main role='main'>
+		    <a id='main-content' tabindex='-1'></a>
+		    <div className='region region-slide-in-menu site-content js-etracker'>
+			<div className='region region-content'>
+			    <div id='block-Buije-Content'
+				 className='block block-system block-system-main-block'>
+				<article className='node node--type-landingpage node--view-mode-full'
+					 role='article'
+					 about='/de/Dies ist ein Projekt von SlamBase'>
+				    <div className='node-content'>
+					<div className='grid grid-frontend clearfix'>
+					    <GridThematicFocus />
+					    <GridOneSlotWhole />
+					</div>
+				    </div>
+				</article>
+			    </div>
+			</div>
+		    </div>
+		    <Copyright />
+		</main>
+	    </div>	    
+	);
+    }
+}
+
+export default Main;

@@ -1,0 +1,61 @@
+{
+    "Owner": "Copyright © 2021 Akobuije GmbH",
+    "Autor": "Bob-Anyeji Chukwunonso",
+    "Date": "04.03.2021",
+    "Discription": "Custom Menu Component with Navigation Interface", 
+    "Document": "Menu.js", 
+    "Template": "https://heimatkunde.boell.de/de/zwischenraum-fuer-kunst",
+
+    "members": [{
+	"color": "red",
+	"link": "www.Akobuije.com",
+	"content": "Nano Robotics",
+	"items": [{
+            "link": "www.akobuije.com",
+	    "titel": "1Radiation resistance"
+	},{
+            "link": "www.akobuije.com",
+	    "titel": "2Radiation resistance"
+	},{
+            "link": "www.akobuije.com",
+	    "titel": "3Radiation resistance"
+	},{
+            "link": "www.akobuije.com",
+	    "titel": "4Radiation resistance"
+	}]
+    },{
+	"color": "green",
+	"link": "www.Akobuije.com",
+	"content": "Quadruple Robots for Locomotion",
+	"items": [{
+            "link": "www.akobuije.com",
+	    "titel": "4Radiation resistance"
+	},{
+            "link": "www.akobuije.com",
+	    "titel": "5Radiation resistance"
+	},{
+            "link": "www.akobuije.com",
+	    "titel": "6Radiation resistance"
+	},{
+            "link": "www.akobuije.com",
+	    "titel": "7Radiation resistance"
+	}]
+    },{
+	"color": "blue",
+	"link": "www.Akobuije.com",
+	"content": "Hype loop Schuttle Booster",
+	"items": [{
+            "link": "www.akobuije.com",
+	    "titel": "11Radiation resistance"
+	},{
+            "link": "www.akobuije.com",
+	    "titel": "12Radiation resistance"
+	},{
+            "link": "www.akobuije.com",
+	    "titel": "13Radiation resistance"
+	},{
+            "link": "www.akobuije.com",
+	    "titel": "14Radiation resistance"
+	}]
+    }]
+}
