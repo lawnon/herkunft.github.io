@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react'
-
+import {Link} from 'react-router-dom'
 
 // Class Object Initialisation
 class Header extends Component{
@@ -57,10 +57,9 @@ class Header extends Component{
 			<div id="blockLogo"
 			     className="block Logo">
 			    <div className="field">
-				<a href="https://www.slambase.de/"
-				   target="_blank">
+				<Link to="./">
 				    <img src="Slam-Base-Logo_RGB-310w.webp" />
-				</a>			   
+				</Link>			   
 			    </div>
 			</div>		 
 		    </div>

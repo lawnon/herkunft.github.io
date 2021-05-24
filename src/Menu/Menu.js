@@ -20,6 +20,19 @@ class Menu extends Component{
 	    btnExpand: null,
 	    spanTitle: null,
 	};
+
+	//// GET Data from Backend Server Via Fetch
+	//fetch(ReadUrl,{
+	//    method: 'GET',
+	//    headers: {
+	//	'Accept': 'application/json',
+	//	'Content-Type': 'application/json',
+	//    },
+	//}).then((response) => {
+	//    return console.log(response);
+	//}).catch((err) => {
+	//    console.log(err);
+	//});
     }
     
     componentDidMount() {
@@ -218,8 +231,7 @@ class Menu extends Component{
 	// Initialisation of Final Menu Export
 	return(
 	    <div className="Menu">
-		<MegaMenu />
-		
+		<MegaMenu />		
 	    </div>
 	);
     }

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import Header from './Header.js';
-import Menu from './Menu.js';
-import Main from './Main.js';
-import Footer from './Footer.js';
+import Header from './Header/Header.js';
+import Menu from './Menu/Menu.js';
+import Main from './Main/Main.js';
+import Footer from './Footer/Footer.js';
 
 
 class App extends Component{
@@ -14,8 +14,6 @@ class App extends Component{
 		<div className="PageContainer" style={{paddingTop: "0px"}}> 
 		    {/* Header Component */}
 		    <Header />
-		    {/* Menu-Navigation Component */}
-		    <Menu />
 		    <div className="afarMark"></div>
 		    {/* Main Body Compnent */}
 		    <Main />

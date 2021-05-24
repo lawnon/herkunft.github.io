@@ -80,11 +80,11 @@ export const FocusHeader = (props) => {
 		 style={{backgroundImage:props.img}}>
 	    <article className='thematic-focus-box__words'>
 		{/* Header Box */}
-		<FHeader intro='Open Space for Robotics'
-			 title='This is A Test Title'
-			 curator='Akobuije'
-			 curatorLink ='https://www.slambase.de/impressum'
-			 articleLink='https://www.slambase.de/impressum' />			
+		<FHeader intro={props.intro}
+			 title={props.title}
+			 curator={props.curator}
+			 curatorLink ={props.curatorLink}
+			 articleLink={props.articleLink} />			
 	    </article>
 	</article>
     );
@@ -97,11 +97,11 @@ const FocusMain = (props) => {
 	    <article className='thematic-focus-box__words'>
 		{/* Header Box */}
 		<FHeader intro={props.intro}
-			 title='This is A Test Title'
-			 curator='Akobuije'
-			 curatorLink ='https://www.slambase.de/impressum'
-			 articleLink='https://www.slambase.de/impressum'
-			 buttonText='About the Projekt' />
+			 title={props.title}
+			 curator={props.curator}
+			 curatorLink ={props.curatorLink}
+			 articleLink={props.articleLink}
+			 buttonText={props.buttonText} />
 		{/* Navigation Box */}
 		<FNav />			
 	    </article>
