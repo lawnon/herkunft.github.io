@@ -21,7 +21,6 @@ import {
 // Export Component
 class Main extends Component{
 
-    
     constructor(props){
 	super(props);
 
@@ -175,7 +174,8 @@ class Main extends Component{
 	return (
 	    <Switch>		
 		<Route exact path='/Article' component={Article} />
-		<Route exact path='/user=SlamBase;psw=20210418_herkunft;Component=Menu' component={MenuConfig} />
+		<Route exact path='/user=SlamBase;psw=20210418_herkunft;Component=MenuConfig'
+		       component={MenuConfig} />
 		<Route path='/' component={Main} />
 	    </Switch>
 	);

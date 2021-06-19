@@ -9,7 +9,6 @@
 import React, {Component} from 'react';
 import MenuTable from './MenuTable.js';
 import MenuForm from './MenuForm.js';
-import Data from './Menu.json';
 import './MenuConfig.css'; 
 
 const WriteUrl = 'http://localhost:5000/write/menu';
@@ -28,29 +27,12 @@ class MenuConfig extends Component{
 	    Discription: "Custom Menu Component with Navigation Interface", 
 	    Document: "Menu.js", 
 	    Template: "https://heimatkunde.boell.de/de/zwischenraum-fuer-kunst",
-	    members: []
+	    members: [
+		{
+		    items: []
+		},
+	    ]
 	};
-		
-	// Initialize Data Array
-	//Data.members.forEach((Slot, index) => {
-	//    var data = {
-	//	color: Slot.color,
-	//	link: Slot.link,
-	//	content: Slot.content,
-	//	items: [],
-	//    };
-	//    dataArray = [...dataArray, data];
-	//});
-	
-	//this.state = {
-	//    Owner: "Copyright © 2021 Akobuije GmbH",
-	//    Autor: "Bob-Anyeji Chukwunonso",
-	//    LastUpdated: "04.03.2021",
-	//    Discription: "Custom Menu Component with Navigation Interface", 
-	//    Document: "Menu.js", 
-	//    Template: "https://heimatkunde.boell.de/de/zwischenraum-fuer-kunst",
-	//    members: dataArray
-	//};
     }
 
     componentDidMount() {
@@ -69,11 +51,22 @@ class MenuConfig extends Component{
 	    console.log(ResData);
 	    // Initialize Data Array
 	    ResData.members.forEach((Slot, index) => {
+		var itemArray = [];
+		// SubItems Initialisieren
+		Slot.items.forEach((item, subIdex) => {
+		    var itemData = {
+			link: item.link,
+			titel: item.titel,
+		    };
+		    itemArray = [...itemArray, itemData] 
+		});
+
+		// Menu Slot Initialisieren
 		var data = {
 		    color: Slot.color,
 		    link: Slot.link,
 		    content: Slot.content,
-		    items: [],
+		    items: itemArray,
 		};
 		dataArray = [...dataArray, data];
 	    });	
@@ -95,6 +88,18 @@ class MenuConfig extends Component{
 	});
     }
 
+    removeItem = (index, subIndex) => {
+	var Members = this.state.members;
+	
+	Members[index].items  = Members[index].items.filter((items, i) => {
+	    return i !== subIndex
+	});
+	
+	this.setState({
+	    members: Members,
+	});
+    }
+    
     /* Update DOM with new data Enty */
     handleSubmit = (member) => {
 	if(member.link != "" && member.content != ""){
@@ -105,6 +110,31 @@ class MenuConfig extends Component{
 	    
 	    this.setState({members: [...this.state.members, member]});
 	    this.setState({LastUpdated: dateTime});
+	}
+    }
+
+    /*Update DOM with new Item Entry */
+    handleItemSubmit = (item) => {
+	if (item.itemsId < 0
+	    || item.itemsId >= this.state.members.length
+	    || isNaN(item.itemsId)
+	    || item.itemsId == ''){
+	    return;
+	}
+	if (item.itemsId !== null && item.itemsLink != null && item.itemsTitel != null){
+	    var today = new Date();
+	    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+	    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+	    var dateTime = date+' '+time;
+
+	    var newItem = {
+		link: item.itemsLink,
+		titel: item.itemsTitel,
+	    };
+	    
+	    var Members = this.state.members;
+	    Members[item.itemsId].items = [...Members[item.itemsId].items, newItem];
+	    this.setState({members: Members})
 	}
     }
 
@@ -131,8 +161,10 @@ class MenuConfig extends Component{
 	
 	return(
 	    <div className="MenuConfigurator">
-		<MenuTable members={members} removeMember={this.removeMember} />
-		<MenuForm handleSubmit={this.handleSubmit} saveMembers={this.saveMembers} />
+		<MenuTable members={members} removeMember={this.removeMember} removeItem={this.removeItem} />
+		<MenuForm handleSubmit={this.handleSubmit}
+			  handleItemSubmit={this.handleItemSubmit}
+			  saveMembers={this.saveMembers} />
 	    </div>
 	);
     }

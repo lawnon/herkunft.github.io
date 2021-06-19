@@ -993,6 +993,9 @@ tfoot th {
 td {
   border-bottom: 1px solid #dedede;
 }
+.items {
+    width: 50%
+}
 
 th,
 td {

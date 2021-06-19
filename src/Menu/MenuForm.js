@@ -14,19 +14,25 @@ class MenuForm extends Component {
 	color: '',
 	link: '',
 	content: '',
-	items: [],
+	itemsId: '',
+	itemsLink: '',
+	itemsTitel: '',
     };
     state = this.initialState;
 
     handleChange = (event) => {
-
 	this.setState({
 	    [event.target.name]: event.target.value,
 	});
     }
 
-    submitForm = () => {
+    submitMember = () => {
 	this.props.handleSubmit(this.state);
+	this.setState(this.initialState);
+    }
+
+    submitItem = () => {
+	this.props.handleItemSubmit(this.state);
 	this.setState(this.initialState);
     }
 
@@ -37,10 +43,13 @@ class MenuForm extends Component {
     
     render(){
 	
-	const {color, link, content} = this.state;
+	const {color, link, content, itemsId, itemsLink, itemsTitel} = this.state;
+	const index = null;
 
 	return(
 	    <form>
+		<div className="divMembers">
+		    <h2>Members</h2>
 		    <label htmlFor='color'>Color</label>
 		    <input type='text'
 			   name='color'
@@ -58,10 +67,33 @@ class MenuForm extends Component {
 			   name='content'
 			   id='content'
 			   value={content}
+			   onChange={this.handleChange} />
+		</div>
+		<div className="divItems">
+		    <h2>Items</h2>		    
+		    <label htmlFor='ID'>Member ID</label>
+		    <input type='number'
+			   name='itemsId'
+			   id='itemsId'
+			   value={itemsId}
+			   onChange={this.handleChange} />
+		    <label htmlFor='Link'>Link</label>
+		    <input type='text'
+			   name='itemsLink'
+			   id='itemsLink'
+			   value={itemsLink}
+			   onChange={this.handleChange} />
+		    <label htmlFor='Titel'>Titel</label>
+		    <input type='text'
+			   name='itemsTitel'
+			   id='itemsTitel'
+			   value={itemsTitel}
 			   onChange={this.handleChange} />		    
-		<input type="button" value="Submit" onClick={this.submitForm} />		
+		</div>
+		<input type="button" value="Submit Member" onClick={this.submitMember} />
+		<input type="button" value="Submit Item" onClick={this.submitItem} />
 		<input type='button' value='Save' onClick={this.saveForm} />
-		</form>
+	    </form>
 	);
     }
 }
