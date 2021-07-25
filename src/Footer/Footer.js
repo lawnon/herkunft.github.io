@@ -16,43 +16,43 @@ class Footer extends Component{
 	return(
 	    <div className="Footer">
 		{/* Insert Content Here */}
-		<footer class="site-footer"
+		<footer className="site-footer"
 			role="contentinfo">
-		    <div class="site-footer-top-wrapper">
-			<div class="inner">          
+		    <div className="site-footer-top-wrapper">
+			<div className="inner">          
 			</div>
 		    </div>
-		    <div class="site-footer-middle-wrapper">
-			<div class="inner">
+		    <div className="site-footer-middle-wrapper">
+			<div className="inner">
 			</div>
 		    </div>
-		    <div class="site-footer-bottom-wrapper">
-			<div class="inner">
-			    <div class="site-footer-bottom-top">
-				<div class="region region-footer-bottom site-footer-bottom">
-				    <div class="site-footer-bottom__copyright">
+		    <div className="site-footer-bottom-wrapper">
+			<div className="inner">
+			    <div className="site-footer-bottom-top">
+				<div className="region region-footer-bottom site-footer-bottom">
+				    <div className="site-footer-bottom__copyright">
 					© SlamBase
 				    </div>
 				    <nav role="navigation"
 					 aria-labelledby="block-theodor-footer-menu"
 					 id="block-theodor-footer"
-					 class="block block-menu navigation menu--footer">
-					<h2 class="visually-hidden"
+					 className="block block-menu navigation menu--footer">
+					<h2 className="visually-hidden"
 					    id="block-theodor-footer-menu">
 					    Footer menu
 					</h2>
-					<ul class="site-footer-bottom__menu">
-					    <li class="site-footer-bottom__menu-item">
+					<ul className="site-footer-bottom__menu">
+					    <li className="site-footer-bottom__menu-item">
 						<a href="https://www.slambase.de/Datenschutz">
 						    Datenschutz
 						</a>
 					    </li>
-					    <li class="site-footer-bottom__menu-item">
+					    <li className="site-footer-bottom__menu-item">
 						<a href="https://www.slambase.de/impressum">
 						    Impressum
 						</a>
 					    </li>
-					    <li class="site-footer-bottom__menu-item">
+					    <li className="site-footer-bottom__menu-item">
 						<a href="https://www.slambase.de/kontakt">
 						    Kontakt
 						</a>

@@ -30,8 +30,8 @@ class Main extends Component{
 	
 	const Copyright = () => {
 	    return(
-		<div class='print-copyright-container'>
-		    <p class='print-copyright-text'>
+		<div className='print-copyright-container'>
+		    <p className='print-copyright-text'>
 			<b>© Slam Base</b><br/>
 			Waldstraße 30B<br/>
 			26903 Surwold, Germany<br/>
@@ -50,7 +50,7 @@ class Main extends Component{
 		    <Menu />
 		    {/* Dominant Body of Content */}
 		    <main role='main'>
-			<a id='main-content' tabindex='-1'></a>
+			<a id='main-content' tabIndex='-1'></a>
 			<div className='region region-slide-in-menu site-content js-etracker'>
 			    <div className='region region-content'>
 				<div id='block-Buije-Content'

@@ -20,19 +20,6 @@ class Menu extends Component{
 	    btnExpand: null,
 	    spanTitle: null,
 	};
-
-	//// GET Data from Backend Server Via Fetch
-	//fetch(ReadUrl,{
-	//    method: 'GET',
-	//    headers: {
-	//	'Accept': 'application/json',
-	//	'Content-Type': 'application/json',
-	//    },
-	//}).then((response) => {
-	//    return console.log(response);
-	//}).catch((err) => {
-	//    console.log(err);
-	//});
     }
     
     componentDidMount() {
@@ -43,61 +30,62 @@ class Menu extends Component{
 	if(Row1 != null){	    
 	    Data.members.forEach((Slot, index) => {
 
-		console.log(index);
-		console.log(Slot);		
+		// Debug Info
+		//console.log(index);
+		//console.log(Slot);		
 		   
 		// Initialize Menu Slot
 		var divSlot = document.createElement('div');
 		var divMegaMenuSlot = "divMegaMenu divSlot " + index;
-		divSlot.setAttribute('class', divMegaMenuSlot);
+		divSlot.setAttribute('className', divMegaMenuSlot);
 
 		// Initialize Navigation Block
 		var Nav = document.createElement('nav');
 		var blockMegaMenuNavSlot = "blockMegaMenuNavSlot " + index;
 		var blockMegaMenuSlot = "blockMegaMenuSlot " + index;
 		Nav.setAttribute('id', blockMegaMenuNavSlot);
-		Nav.setAttribute('class', 'block blockMenu navigation menuMain');
+		Nav.setAttribute('className', 'block blockMenu navigation menuMain');
 		Nav.setAttribute('role', 'navigation');
 		Nav.setAttribute('aria-labelledby', blockMegaMenuSlot);
 
 		var divVh = document.createElement('div');
 		divVh.setAttribute('id' , blockMegaMenuSlot);
-		divVh.setAttribute('class', 'visually-hidden');
+		divVh.setAttribute('className', 'visually-hidden');
 		divVh.textContent = 'Megamenu ' + 'Row 1' + ' Slot ' + index.toString(); 
 		
 		// Initialize ul Element
 		var Ul = document.createElement('ul');
-		Ul.setAttribute('class', 'megaMenu megaMenu_menu Toplevel');
+		Ul.setAttribute('className', 'megaMenu megaMenu_menu Toplevel');
 
 		// Initialize li Element
 		var Li = document.createElement('li');
-		Li.setAttribute('class', 'menuItem menuItem--Expanded menuItemHasChildren');
+		Li.setAttribute('className', 'menuItem menuItem--Expanded menuItemHasChildren');
 
 		// Initialize a Element
 		var A = document.createElement('a');
 		var class_a_name = Slot.color + ' menuLink menuLinkHasChildren';
-		A.setAttribute('class', class_a_name);
+		A.setAttribute('className', class_a_name);
 		A.setAttribute('href', Slot.link);
 		A.textContent = Slot.content;
 
 		// Initialize Span Toggle Element
 		var SpanToggler = document.createElement('span');
-		SpanToggler.setAttribute('class', 'megaMenuToggler');
+		SpanToggler.setAttribute('className', 'megaMenuToggler');
 		SpanToggler.setAttribute('role', 'button');
 		SpanToggler.setAttribute('aria-expanded', 'false');
 
 		// Initializer Span visually Hidden Element
 		var SpanVh = document.createElement('span');
-		SpanVh.setAttribute('class', 'visually-hidden');
+		SpanVh.setAttribute('className', 'visually-hidden');
 		SpanVh.textContent = 'Toggle submenu';
 
 		// Initialize Span Toggler Icon
 		var SpanIcon = document.createElement('span');
-		SpanIcon.setAttribute('class', 'megaMenuTogglerIcon');
+		SpanIcon.setAttribute('className', 'megaMenuTogglerIcon');
 		SpanIcon.setAttribute('aria-hidden', 'true');
 
 		var UlToplevel = document.createElement('ul');
-		UlToplevel.setAttribute('class', 'megaMenu megaMenuToplevel');
+		UlToplevel.setAttribute('className', 'megaMenu megaMenuToplevel');
 	   	
 		// Initialize Menu Slot
 		Row1.appendChild(divSlot);
@@ -115,10 +103,10 @@ class Menu extends Component{
 		// Initialize Menu Slot Items
 		Slot.items.forEach((item)=>{
 		    var LiItem = document.createElement('li');
-		    LiItem.setAttribute('class', 'menuItem');
+		    LiItem.setAttribute('className', 'menuItem');
 
 		    var AItemLink = document.createElement('a');
-		    AItemLink.setAttribute('class', 'menuLink');
+		    AItemLink.setAttribute('className', 'menuLink');
 		    AItemLink.setAttribute('href', item.link);
 		    AItemLink.textContent = item.titel;
 
@@ -129,8 +117,9 @@ class Menu extends Component{
 	}else{
 	    console.log("MM Row 1 not found");
 	}
-	
-	console.log("Component Did Mount Completed");
+
+	// Debug Info
+	//console.log("Component Did Mount Completed");
     }
     
     render(){ 

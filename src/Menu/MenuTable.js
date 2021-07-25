@@ -6,8 +6,7 @@
  * Template: React Tutorial
  */
 
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom';
+import React from 'react'
 
 const TableHeader = () => {
     return(

@@ -65,7 +65,7 @@ export const GridFocusHeader = (props) => {
 const GridInnerBox = (props) => {
     var von = 'Von ';
     return(
-	<div class="grid-box-inner">
+	<div className="grid-box-inner">
 	    <article role="article"
 		     className="teaser--main">
 		<Link to={props.articleLink}
@@ -86,9 +86,9 @@ const GridInnerBox = (props) => {
 							     height="315"
 							     src="https://www.youtube.com/embed/8jdPZR63sx8"
 							     title="YouTube video player"
-							     frameborder="0"
+							     frameBorder="0"
 							     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							     allowfullscreen>
+							     allowFullScreen>
 						     </iframe>}
 						    {(props.video == null) &&
 						    <img className="media__image media__element b-lazy b-responsive b-loaded"

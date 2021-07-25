@@ -102,7 +102,7 @@ class MenuConfig extends Component{
     
     /* Update DOM with new data Enty */
     handleSubmit = (member) => {
-	if(member.link != "" && member.content != ""){
+	if(member.link !== "" && member.content !== ""){
 	    var today = new Date();
 	    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 	    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
@@ -118,7 +118,7 @@ class MenuConfig extends Component{
 	if (item.itemsId < 0
 	    || item.itemsId >= this.state.members.length
 	    || isNaN(item.itemsId)
-	    || item.itemsId == ''){
+	    || item.itemsId === ''){
 	    return;
 	}
 	if (item.itemsId !== null && item.itemsLink != null && item.itemsTitel != null){
@@ -135,6 +135,7 @@ class MenuConfig extends Component{
 	    var Members = this.state.members;
 	    Members[item.itemsId].items = [...Members[item.itemsId].items, newItem];
 	    this.setState({members: Members})
+	    this.setState({LastUpdated: dateTime});
 	}
     }
 

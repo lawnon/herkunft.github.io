@@ -44,8 +44,6 @@ class MenuForm extends Component {
     render(){
 	
 	const {color, link, content, itemsId, itemsLink, itemsTitel} = this.state;
-	const index = null;
-
 	return(
 	    <form>
 		<div className="divMembers">
